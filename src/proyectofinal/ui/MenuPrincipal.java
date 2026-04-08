@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 
+    public void mostrarMenu() {
+    
     SistemaAlertas sa = new SistemaAlertas();
+    MenuClientes mc = new MenuClientes(); 
+    MenuInventario mi = new MenuInventario();
+    
     Scanner sc = new Scanner(System.in);
     int opcion;
 
@@ -19,11 +24,11 @@ public class MenuPrincipal {
 
     switch (opcion) {
         case 1:
-            
+            mc.MenuClientes();
             break;
             
         case 2:
-
+            mi.MenuInventario();
             break;
             
         case 3:
@@ -40,4 +45,5 @@ public class MenuPrincipal {
     }
     } while (opcion != 5);
 sc.close();
+}
 }
