@@ -1,10 +1,10 @@
 package proyectofinal.ui;
 
-import java.util.Scanner;
-
-import proyectofinal.service.SistemaAlertas;
-
+import proyectofinal.ui.MenuClientes;
+import proyectofinal.ui.MenuInventario;
 import proyectofinal.ui.MenuVentas;
+import proyectofinal.service.SistemaAlertas;
+import proyectofinal.util.InputUtil;
 
 public class MenuPrincipal {
 
