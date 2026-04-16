@@ -9,48 +9,49 @@ import proyectofinal.ui.MenuVentas;
 public class MenuPrincipal {
 
     public void mostrarMenu() {
-    
-    SistemaAlertas sa = new SistemaAlertas();
-    MenuClientes mc = new MenuClientes(); 
+
+    MenuClientes mc = new MenuClientes();
+    MenuVentas mv = new MenuVentas();
     MenuInventario mi = new MenuInventario();
+    SistemaAlertas sa = new SistemaAlertas();
     
     Scanner sc = new Scanner(System.in);
     int opcion;
 
     do {
-        System.out.println("    | MENU PRINCIPAL |    ");
-        System.out.println("Escoja una opción");
-        System.out.println();
+        System.out.println("\n=====| MENU PRINCIPAL |=====");
     System.out.println("1. Clientes");
     System.out.println("2. Inventario");
     System.out.println("3. Ventas");
     System.out.println("4. Alertas");
-    System.out.println("5. Salida");
-    opcion = scanner.nextInt();
+    System.out.println("5. Salir");
+        
+    opcion = InputUtil.leerInt("Seleccione una opción: ");
 
     switch (opcion) {
         case 1:
-            mc.MenuClientes();
+            mc.MostrarMenu();
             break;
             
         case 2:
-            mi.MenuInventario();
+            mi.MostrarMenu();
             break;
             
         case 3:
-           MenuVentas mv = new MenuVentas();
            mv.mostrarMenu();
             break;
             
         case 4:
-            sa.SistemaAlertas();
+            sa.menu();
             break;
             
         case 5:
             System.out.println("Cerrando el programa...");
             break;
+
+        default:
+            System.out.println("Opción inválida");
     }
     } while (opcion != 5);
-sc.close();
 }
 }
