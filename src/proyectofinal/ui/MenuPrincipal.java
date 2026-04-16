@@ -15,6 +15,8 @@ public class MenuPrincipal {
 
     do {
         System.out.println("    | MENU PRINCIPAL |    ");
+        System.out.println("Escoja una opción");
+        System.out.println();
     System.out.println("1. Clientes");
     System.out.println("2. Inventario");
     System.out.println("3. Ventas");
