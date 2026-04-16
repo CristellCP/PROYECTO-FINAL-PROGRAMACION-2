@@ -1,11 +1,12 @@
 package proyectofinal.main;
-import proyectofinal.ui.MenuPrincipal;
 
+import proyectofinal.ui.MenuVentas;
 
 public class Main {
     public static void main(String[] args) {
-        MenuPrincipal mp = new MenuPrincipal();
-        mp.MenuPrincipal(); 
-        System.out.println("Funcionando.");
+
+        MenuVentas menu = new MenuVentas();
+        menu.mostrarMenu();
+
     }
 }

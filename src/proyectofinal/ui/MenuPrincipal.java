@@ -2,6 +2,10 @@ package proyectofinal.ui;
 
 import java.util.Scanner;
 
+import proyectofinal.service.SistemaAlertas;
+
+import proyectofinal.ui.MenuVentas;
+
 public class MenuPrincipal {
 
     public void mostrarMenu() {
@@ -34,7 +38,8 @@ public class MenuPrincipal {
             break;
             
         case 3:
-
+           MenuVentas mv = new MenuVentas();
+           mv.mostrarMenu();
             break;
             
         case 4:
