@@ -1,7 +1,5 @@
 package proyectofinal.service;
 
-import proyectofinal.model.Motor;
-import proyectofinal.file.MotorFile;
 import java.util.*;
 
 public class InventarioService {
