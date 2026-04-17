@@ -58,5 +58,6 @@ public class MenuPrincipal {
             System.out.println("Opción inválida");
     }
     } while (opcion != 5);
+    sc.close();
 }
 }
