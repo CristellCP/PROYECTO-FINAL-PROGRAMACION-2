@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import proyectofinal.model.Alerta;
 import proyectofinal.model.Cliente;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class SistemaAlertas {
     
@@ -13,7 +15,12 @@ public class SistemaAlertas {
 
     public void generarAlertas() {
         listaDeAlertas.clear(); 
-        String fechaActual = "17/04/2026"; 
+        // Obtenemos la fecha de hoy
+        LocalDate fecha = LocalDate.now();
+        // Le dimos el formato día/mes/año
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        // Lo convertimos a texto para guardarlo en la variable
+        String fechaActual = fecha.format(formato); 
         
         System.out.println("Revisando los datos de clientes...");
 
