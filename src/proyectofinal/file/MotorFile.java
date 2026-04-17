@@ -12,16 +12,13 @@ public class MotorFile {
 
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linea;
-            boolean primeraLinea = true;
 
             while ((linea = br.readLine()) != null) {
 
-                if (primeraLinea) {
-                    primeraLinea = false;
-                    continue;
-                }
-
                 if (linea.trim().isEmpty()) continue;
+
+                // Ignorar encabezado si existe
+                if (linea.startsWith("codigoMotor")) continue;
 
                 String[] datos = linea.split(",");
 
@@ -51,10 +48,16 @@ public class MotorFile {
 
     public void guardarMotores(List<Motor> lista) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))) {
+
+            // (Opcional) escribir encabezado
+            bw.write("codigoMotor,marca,modelo,precio,cantidadDisponible,stockMinimo");
+            bw.newLine();
+
             for (Motor m : lista) {
                 bw.write(m.toString());
                 bw.newLine();
             }
+
         } catch (IOException e) {
             System.out.println("Error guardando archivo");
         }

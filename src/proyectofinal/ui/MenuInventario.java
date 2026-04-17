@@ -5,7 +5,7 @@ import proyectofinal.model.Motor;
 import java.util.*;
 
 public class MenuInventario {
-    
+
     private static Scanner sc = new Scanner(System.in);
     private static InventarioService service = new InventarioService();
 
@@ -18,7 +18,8 @@ public class MenuInventario {
             System.out.println("2. Agregar motor");
             System.out.println("0. Salir");
             System.out.print("Opción: ");
-            op = sc.nextInt();
+
+            op = Integer.parseInt(sc.nextLine());
 
             switch (op) {
                 case 1 -> verInventario();
@@ -31,13 +32,17 @@ public class MenuInventario {
     public static void verInventario() {
         List<Motor> lista = service.listarMotores();
 
+        if (lista.isEmpty()) {
+            System.out.println("No hay motores registrados.");
+            return;
+        }
+
         for (Motor m : lista) {
             System.out.println(m);
         }
     }
 
     public static void agregarMotor() {
-        sc.nextLine();
 
         System.out.print("Código: ");
         String codigo = sc.nextLine();
@@ -49,13 +54,13 @@ public class MenuInventario {
         String modelo = sc.nextLine();
 
         System.out.print("Precio: ");
-        double precio = sc.nextDouble();
+        double precio = Double.parseDouble(sc.nextLine());
 
         System.out.print("Cantidad: ");
-        int cantidad = sc.nextInt();
+        int cantidad = Integer.parseInt(sc.nextLine());
 
         System.out.print("Stock mínimo: ");
-        int minimo = sc.nextInt();
+        int minimo = Integer.parseInt(sc.nextLine());
 
         Motor m = new Motor(codigo, marca, modelo, precio, cantidad, minimo);
         service.agregarMotor(m);
