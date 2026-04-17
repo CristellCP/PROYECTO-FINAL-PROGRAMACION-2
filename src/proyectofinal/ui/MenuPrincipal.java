@@ -3,7 +3,7 @@ package proyectofinal.ui;
 import java.util.Scanner;
 import proyectofinal.service.SistemaAlertas;
 
-    //Esta clase permite al usuario seleccionar una opcion
+    //Esta clase permite al usuario seleccionar una opcion 
     //mediante teclado y redirige al menu correspondiente segun la opcion escogida
 
 public class MenuPrincipal {
