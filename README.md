@@ -1,5 +1,6 @@
 # Universidad Latina de Panamá - Proyecto Final de Programación II
 ## Nombre del Proyecto
+Sistema de Gestión Comercial para Empresa de Motores Industriales
 
 ## Integrantes
 - Ana Freitez
