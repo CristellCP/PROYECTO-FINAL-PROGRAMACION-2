@@ -28,11 +28,11 @@ public class MenuPrincipal {
 
     switch (opcion) {
         case 1:
-            mc.MostrarMenu();
+            mc.mostrarMenu();
             break;
             
         case 2:
-            mi.MostrarMenu();
+            mi.mostrarMenu();
             break;
             
         case 3:
