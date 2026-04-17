@@ -14,7 +14,9 @@ public class InventarioService {
 
     public void agregarMotor(Motor nuevo) {
         List<Motor> lista = motorFile.leerMotores();
+
         lista.add(nuevo);
+
         motorFile.guardarMotores(lista);
     }
 
@@ -32,7 +34,8 @@ public class InventarioService {
 
         for (Motor m : lista) {
             if (m.getCodigoMotor().equalsIgnoreCase(codigo)) {
-                m.setCantidadDisponible(m.getCantidadDisponible() - cantidad);
+                int nuevaCantidad = m.getCantidadDisponible() - cantidad;
+                m.setCantidadDisponible(Math.max(nuevaCantidad, 0));
             }
         }
 
