@@ -23,7 +23,7 @@ public class MenuPrincipal {
     System.out.println("5. Salir");
 
         System.out.println("Seleccione una opción: ");
-    opcion = sc.NextInt();
+    opcion = sc.nextInt();
         sc.nextLine();
 
     switch (opcion) {

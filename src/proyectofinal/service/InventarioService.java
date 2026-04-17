@@ -6,6 +6,7 @@ import java.util.*;
 
 public class InventarioService {
 
+    private Motor mt = new Motor();
     private MotorFile motorFile = new MotorFile();
 
     public List<Motor> listarMotores() {

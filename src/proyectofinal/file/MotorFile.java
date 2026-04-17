@@ -1,10 +1,10 @@
 package proyectofinal.file;
 
 import java.util.*;
+import proyectofinal.model.Motor;
 
 public class MotorFile {
     private String ruta = "datos/inventario.csv";
-
 
     public List<Motor> leerMotores() {
         List<Motor> lista = new ArrayList<>();
