@@ -1,7 +1,6 @@
 package proyectofinal.ui;
 
 import java.util.Scanner;
-import proyectofinal.ui.*;
 import proyectofinal.service.SistemaAlertas;
 
 public class MenuPrincipal {
@@ -10,7 +9,6 @@ public class MenuPrincipal {
 
     MenuClientes mc = new MenuClientes();
     MenuVentas mv = new MenuVentas();
-    MenuInventario mi = new MenuInventario();
     SistemaAlertas sa = new SistemaAlertas();
     
     Scanner sc = new Scanner(System.in);
@@ -23,8 +21,10 @@ public class MenuPrincipal {
     System.out.println("3. Ventas");
     System.out.println("4. Alertas");
     System.out.println("5. Salir");
-        
-    opcion = InputUtil.leerInt("Seleccione una opción: ");
+
+        System.out.println("Seleccione una opción: ");
+    opcion = sc.NextInt();
+        sc.nextLine();
 
     switch (opcion) {
         case 1:
@@ -32,7 +32,7 @@ public class MenuPrincipal {
             break;
             
         case 2:
-            mi.mostrarMenu();
+            MenuInventario.mostrarMenu();
             break;
             
         case 3:
