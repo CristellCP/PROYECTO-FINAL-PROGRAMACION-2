@@ -3,4 +3,8 @@ C001,Juan Perez,60000000,juan@email.com,0.0
 C002,Ana Gomez,61234567,ana@email.com,150.0
 C003,Luis Perez,60001111,luis@email.com,0.0
 C004,Mariano Herrera,64853925,marianoh@gmail.com,15.0
+<<<<<<< HEAD
 C006,Carlos Perez,67852911,carlospz@gmail.com,10.0
+=======
+C005,Eric Arce,69483103,eric@gmail.com,0.0
+>>>>>>> 3a0904d5b24049df0806ea2c054ee2676f9c4e5f
