@@ -12,20 +12,36 @@ public class MotorFile {
 
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linea;
+            boolean primeraLinea = true;
+
             while ((linea = br.readLine()) != null) {
+
+                if (primeraLinea) {
+                    primeraLinea = false;
+                    continue;
+                }
+
+                if (linea.trim().isEmpty()) continue;
+
                 String[] datos = linea.split(",");
 
-                Motor m = new Motor(
-                    datos[0],
-                    datos[1],
-                    datos[2],
-                    Double.parseDouble(datos[3]),
-                    Integer.parseInt(datos[4]),
-                    Integer.parseInt(datos[5])
-                );
+                try {
+                    Motor m = new Motor(
+                        datos[0],
+                        datos[1],
+                        datos[2],
+                        Double.parseDouble(datos[3]),
+                        Integer.parseInt(datos[4]),
+                        Integer.parseInt(datos[5])
+                    );
 
-                lista.add(m);
+                    lista.add(m);
+
+                } catch (Exception e) {
+                    System.out.println("Línea inválida: " + linea);
+                }
             }
+
         } catch (IOException e) {
             System.out.println("Error leyendo archivo");
         }
