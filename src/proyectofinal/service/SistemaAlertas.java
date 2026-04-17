@@ -3,23 +3,34 @@ package proyectofinal.service;
 import java.util.ArrayList;
 import java.util.Scanner;
 import proyectofinal.model.Alerta;
+import proyectofinal.model.Cliente;
 
 public class SistemaAlertas {
     
     ArrayList<Alerta> listaDeAlertas = new ArrayList<>();
     Scanner entrada = new Scanner(System.in);
+    ClienteService clienteService = new ClienteService();
 
     public void generarAlertas() {
         listaDeAlertas.clear(); 
-        String fechaActual = "08/04/2026"; 
+        String fechaActual = "17/04/2026"; 
         
         System.out.println("Revisando el inventario y los clientes...");
 
         // COMPAÑEROS: Aqui conectamos con la parte de Inventario para ver el stock
         // if (motor.cantidad <= stockMinimo) { ... }
 
-        // COMPAÑEROS: Aqui conectamos con Clientes para ver quien debe dinero
-        // if (cliente.saldo > 0) { ... }
+        // Revisar clientes con deudas
+        ArrayList<Cliente> clientes = clienteService.listarClientes();
+        for (Cliente cliente : clientes) {
+            if (cliente.getSaldoPendiente() > 0) {
+                String mensaje = "El cliente " + cliente.getNombre() + " (ID: " + cliente.getIdCliente() + 
+                                 ") tiene una deuda de $" + String.format("%.2f", cliente.getSaldoPendiente());
+                Alerta alerta = new Alerta("DEUDA", mensaje, fechaActual);
+                listaDeAlertas.add(alerta);
+            }
+        }
+
         
         System.out.println("Las alertas se generaron correctamente.");
     }

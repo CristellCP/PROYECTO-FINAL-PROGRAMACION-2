@@ -29,9 +29,8 @@ public class ClienteService {
             }
         }
 
-        lista.add(nuevoCliente);
-        clienteFile.guardarClientes(lista);
-        return true;
+        // Agregar el cliente al archivo CSV
+        return clienteFile.agregarClienteNuevo(nuevoCliente);
     }
 
     // Buscar cliente por ID

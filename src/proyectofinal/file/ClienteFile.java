@@ -39,23 +39,20 @@ public class ClienteFile {
         return listaClientes;
     }
 
-    // Guardar todos los clientes en el archivo CSV
-    public void guardarClientes(ArrayList<Cliente> listaClientes) {
+    // Agregar un cliente nuevo
+    public boolean agregarClienteNuevo(Cliente cliente) {
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA))) {
+        // Ponemos la funcion dentro de un bloque try-catch para manejar posibles errores
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(RUTA, true))) {
 
-            // Escribir encabezado
-            bw.write("idCliente,nombre,telefono,correo,saldoPendiente");
+            // Agregar el cliente al final del archivo
+            bw.write(cliente.toCsv());
             bw.newLine();
-
-            // Escribir cada cliente
-            for (Cliente c : listaClientes) {
-                bw.write(c.toCsv());
-                bw.newLine();
-            }
+            return true;
 
         } catch (IOException e) {
-            System.out.println("Error al guardar el archivo de clientes.");
+            System.out.println("Error al agregar el cliente al archivo.");
+            return false;
         }
     }
 }
