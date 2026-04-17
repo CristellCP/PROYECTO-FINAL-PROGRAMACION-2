@@ -1,6 +1,7 @@
 package proyectofinal.ui;
 
 import proyectofinal.service.InventarioService;
+import proyectofinal.model.Motor;
 import java.util.*;
 
 public class MenuInventario {
