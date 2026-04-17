@@ -1,7 +1,6 @@
 package proyectofinal.ui;
+
 import java.util.*;
-import proyectofinal.model.Motor;
-import proyectofinal.service.InventarioService;
 
 public class MenuInventario {
     
@@ -28,7 +27,9 @@ public class MenuInventario {
     }
 
     public static void verInventario() {
-        for (Motor m : service.listarMotores()) {
+        List<Motor> lista = service.listarMotores();
+
+        for (Motor m : lista) {
             System.out.println(m);
         }
     }
