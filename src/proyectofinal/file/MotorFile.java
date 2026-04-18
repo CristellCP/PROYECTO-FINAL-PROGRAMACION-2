@@ -21,7 +21,11 @@ public class MotorFile {
                 if (linea.startsWith("codigoMotor")) continue;
 
                 String[] datos = linea.split(",");
-
+                if (datos.length != 6) {
+                     System.out.println("Línea incorrecta: " + linea);
+                    continue;
+                }   
+                
                 try {
                     Motor m = new Motor(
                         datos[0],
