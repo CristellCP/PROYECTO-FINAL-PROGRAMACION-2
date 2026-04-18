@@ -11,7 +11,5 @@ public class Main {
 
         MenuPrincipal menu = new MenuPrincipal();
         menu.mostrarMenu();
-        
-        System.out.println("Funcionando.");
     }
 }
