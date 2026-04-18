@@ -6,33 +6,12 @@ import proyectofinal.model.Alerta;
 import proyectofinal.model.Cliente;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class SistemaAlertas {
     
     ArrayList<Alerta> listaDeAlertas = new ArrayList<>();
     Scanner entrada = new Scanner(System.in);
     ClienteService clienteService = new ClienteService();
-
-    public void iniciarMonitoreoAutomatico() {
-    // Creamos el programador
-    ScheduledExecutorService programador = Executors.newSingleThreadScheduledExecutor();
-
-    // Definimos la tarea
-    Runnable tarea = () -> {
-        System.out.println("--- EJECUCIÓN AUTOMÁTICA DE ALERTAS ---");
-        generarAlertas(); // Llama a la función que creamos
-    };
-
-    // Programamos: (Tarea, espera inicial, periodo, unidad de tiempo)
-    // Aquí dice: "Empieza ya (0) y repite cada 1 día"
-    programador.scheduleAtFixedRate(tarea, 0, 1, TimeUnit.DAYS);
-    
-    System.out.println("Sistema de monitoreo activado: Se ejecutará cada 24 horas.");
-}
-
 
     public void generarAlertas() {
         listaDeAlertas.clear(); 
